@@ -8,3 +8,12 @@
     messagingSenderId: "916964143148"
   };
   firebase.initializeApp(config);
+
+  var queryURL="https://www.zomato.com/&apikey=43766f39f91a89c030cfa51e6b49e21b";
+
+  $.ajax({
+    url:queryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response)
+  });
