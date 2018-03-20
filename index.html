@@ -15,10 +15,67 @@
         <div class="jumbotron">
             <h1>Hounddog's Pizza 3-Degree Pizza</h1>
         </div>
+
+        <table class="reservation-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Party Name</th>
+                    <th scope="col">Size of Party</th>
+                    <th scope="col">Reservation Time</th>
+                  </tr>
+                </thead>
+
+                
+                <tbody id = "new-reservation">
+                  <tr>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="panel panel-secondary">
+                  <div class="panel-heading">
+                      <h3 class="panel-titleTwo"><strong>Make Your Reservation Now!</strong></h3>
+                  </div>
+                  <div class="panel-body">
+                      <form>
+                          <div class="form-group">
+                              <label for="InputPartyName">Party Name</label>
+                              <br>
+                              <input type="partyName" id="InputPartyName" aria-described by="partyNameHelp">
+                          </div>
+                          <div class="form-group">
+                                <label for="InputPartySize">Size of Party</label>
+                                <br>
+                                <input type="partySize" id="InputPartySize" aria-described by="partySizeHelp">
+                          </div>
+                          <div class="form-group">
+                                <label for="InputReservationTime">Reservation Time</label>
+                                <br>
+                                <input type="reservationTime" id="InputReservationTime" aria-described by="partyNameHelp">
+                            </div>
+                      </form>
+                  </div>
+              </div>
+
+
     </div>   
 </body>
 
+
 <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-<script src="assets/javascript/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/script.js"></script>
 </html>

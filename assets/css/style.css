@@ -2,8 +2,8 @@ body {
     background-color:#eeeeee;
 }
 
-jumbortron {
-    
+jumbotron {
+    background-image: url(./assets/images/Pizza.jpeg);
 }
 
 h1 {
