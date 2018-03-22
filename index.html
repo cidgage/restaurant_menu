@@ -12,21 +12,19 @@
 
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <h1>Hounddog's Pizza 3-Degree Pizza</h1>
+        <div class="title"><strong>Mega-Bites!</strong></div>
         </div>
 
-        <table class="reservation-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Party Name</th>
-                    <th scope="col">Size of Party</th>
+        <table class="res-table">
+            <thead>
+                <tr>
+                    <th scope="col">Party Name     |</th>
+                    <th scope="col">Size of Party    | </th>
                     <th scope="col">Reservation Time</th>
-                  </tr>
-                </thead>
+                </tr>
+            </thead>
 
-                
-                <tbody id = "new-reservation">
+            <tbody id = "new-res">
                   <tr>
                     <td>Mark</td>
                     <td>Otto</td>
@@ -42,10 +40,10 @@
                     <td>the Bird</td>
                     <td>@twitter</td>
                   </tr>
-                </tbody>
-              </table>
+            </tbody>
+        </table>
 
-              <div class="panel panel-secondary">
+              <div class="panel-secondary">
                   <div class="panel-heading">
                       <h3 class="panel-titleTwo"><strong>Make Your Reservation Now!</strong></h3>
                   </div>
@@ -62,10 +60,12 @@
                                 <input type="partySize" id="InputPartySize" aria-described by="partySizeHelp">
                           </div>
                           <div class="form-group">
-                                <label for="InputReservationTime">Reservation Time</label>
+                                <label for="InputResTime">Reservation Time</label>
                                 <br>
-                                <input type="reservationTime" id="InputReservationTime" aria-described by="partyNameHelp">
-                            </div>
+                                <input type="resTime" id="InputResTime" aria-described by="resTimeHelp">
+                          </div>
+
+                          <button type="submit" class="btn btn-primary" id="addResBtn">Submit Reservation Now!</button>
                       </form>
                   </div>
               </div>
@@ -75,7 +75,8 @@
 </body>
 
 
-<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="assets/javascript/form-temp.js"></script> -->
 <script src="assets/javascript/script.js"></script>
 </html>
