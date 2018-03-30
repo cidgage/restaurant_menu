@@ -23,13 +23,15 @@ $("#addResBtn").on("click", function(event) {
   
     var partyName= $("#InputPartyName").val().trim();
     var partySize = $("#InputPartySize").val().trim();
-    var resTime = $("#InputResTime").val().trim();
+	var resTime = $("#InputResTime").val().trim();
+	var partyId = $("#InputPartyId").val().trim();
     
     
    var newRes = {
     name: partyName,
     size: partySize,
-    time: resTime,
+	time: resTime,
+	id: partyId,
     
  
    }
@@ -39,12 +41,13 @@ $("#addResBtn").on("click", function(event) {
  
     $("#InputPartyName").val("");
     $("#InputPartySize").val("");
-    $("#InputResTime").val("");
+	$("#InputResTime").val("");
+	$("#InputPartyId").val("X")
  
     return false;
  
-  });
- 
+});
+
    database.ref().on("child_added", function(childSnapshot) {
  
     console.log(childSnapshot.val().name);
@@ -54,14 +57,16 @@ $("#addResBtn").on("click", function(event) {
   
     var partyName = childSnapshot.val().name;
     var partySize = childSnapshot.val().size;
-    var resTime = childSnapshot.val().time;
+	var resTime = childSnapshot.val().time;
+	var partyId = childSnapshot.key();
  
-    $("#new-res").append("<tr><td>" + partyName + "</td><td>" + partySize + "</td><td>"+ resTime + "</td></tr>");
+    $("#new-res").append("<tr><td>" + partyName + "</td><td>" + partySize + "</td><td>"+ resTime + "</td><button data-id='"+ partyId +"' class='cancel'>cancel</button></tr>");
  
   });
 
-  $("#cancelButton").click(function(e) {
+  $(document).click(".cancel", function(e) {
 	e.preventDefault();
+	console.log($(this).attr(data-id));
   console.log('clicked');
 	swal(
 	  {
@@ -83,7 +88,6 @@ $("#addResBtn").on("click", function(event) {
 	});
   
   });
-
 //   code assault js-form
 
 
