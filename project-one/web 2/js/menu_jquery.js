@@ -1,3 +1,13 @@
+var config = {
+  apiKey: "AIzaSyDOuSESzpoEB5uBaQoTj999OkbYTdV36Tc",
+  authDomain: "restaurant-menu-889c1.firebaseapp.com",
+  databaseURL: "https://restaurant-menu-889c1.firebaseio.com",
+  projectId: "restaurant-menu-889c1",
+  storageBucket: "restaurant-menu-889c1.appspot.com",
+  messagingSenderId: "351346849745"
+};
+firebase.initializeApp(config);
+
 $( document ).ready(function() {
 $('#cssmenu > ul > li > a').click(function() {
   $('#cssmenu li').removeClass('active');

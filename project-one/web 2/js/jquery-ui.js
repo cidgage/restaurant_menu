@@ -2,13 +2,13 @@
   var config = {
     apiKey: "AIzaSyDOuSESzpoEB5uBaQoTj999OkbYTdV36Tc",
     authDomain: "restaurant-menu-889c1.firebaseapp.com",
-    databaseURL: "https://restaurant-menu-889c1.firebaseio.com",
+    databaseURL: "https://restxaurant-menu-889c1.firebaseio.com",
     projectId: "restaurant-menu-889c1",
     storageBucket: "",
     messagingSenderId: "351346849745"
   };
   firebase.initializeApp(config);
-
+x
   var database = firebase.database()
 
 /*! jQuery UI - v1.9.2 - 2012-11-23

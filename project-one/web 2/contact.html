@@ -54,9 +54,9 @@ new WOW().init();
                 <div class="navbar-header">
                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar">Home</span>
+                    <span class="icon-bar">About</span>
+                    <span class="icon-bar">Contact</span>
                   </button>
                     <div class="logo animated wow slideInLeft" data-wow-delay=".5s">
                         <a class="navbar-brand" href="index.html">MegaBytes<span>Pizza</span></a>
@@ -72,11 +72,11 @@ new WOW().init();
 						<li><a href="foods.html">Food</a></li>
                     </ul>
                     <!--search map location-->
-                    <div class="search">
+                    <!-- <div class="search">
                         <form>
                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span><input type="email" class="text" value="Enter Your Text..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Text...';}" required="">
                         </form>
-                    </div>
+                    </div> -->
                 </div><!-- /.navbar-collapse -->    
                 
             </nav>
@@ -88,7 +88,7 @@ new WOW().init();
     </div>
 <!-- //banner -->
 <!-- restaurant location -->
-<img id = "location" src="https://maps.googleapis.com/maps/api/staticmap?center=28.7441527,-81.3077455&zoom=14&size=1000x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyA-KqiAsLoJuG3fksyeJk7INrjrP3cI8Ns"></img>
+<!-- <img id = "location" src="https://maps.googleapis.com/maps/api/staticmap?center=28.7441527,-81.3077455&zoom=14&size=1000x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyA-KqiAsLoJuG3fksyeJk7INrjrP3cI8Ns"></img> -->
 <!-- contact -->
 <div id= "map">
     <div class="contact">
@@ -125,71 +125,14 @@ new WOW().init();
 <!-- footer -->
     <div class="footer">
         <div class="container">    
-            <div class="footer-grids">
-                <div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
-                        <h3>Disclaimer</h3>
-                        <p>THE DELIVERY CHARGE IS NOT A DRIVER TIP. Offers Available For A Limited Time. You Must Ask/Click For Certain Offers. Additional Charge For Extra Cheese, Stuffed Crust, Pan, And Extra Toppings May Apply. 
-                           Product Availability, Combinability Of Discounts And Specials, Prices, Participation, Delivery Areas And Charges, And Minimum Purchase Required For Delivery May Vary. Discounts Are Not Applicable To Tax, Delivery Charge, Or Driver Tip.</p>
-                </div>
-                
-                <div class="col-md-4 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
-                    <h3>Flickr Posts</h3>
-                    <div class="footer-grds">
-                        <div class="footer-grd">
-                            <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="footer-grd">
-                            <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="footer-grd">
-                            <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="footer-grd">
-                            <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="footer-grds">
-                        <div class="footer-grd">
-                            <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="footer-grd">
-                            <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="footer-grd">
-                            <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="footer-grd">
-                            <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
+            <div class="footer-grids">    </div>
                 <div class="clearfix"> </div>
             </div>
         </div>
-    </div>
-    <div class="footer-copy">
-        <div class="container">    
-            <div class="footer-left animated wow slideInUp" data-wow-delay=".5s">
-                
-            </div>
-            <div class="footer-right animated wow slideInUp" data-wow-delay=".7s">
-                <ul>
-                    <li><a href="#" class="p"> </a></li>
-                    <li><a href="#" class="facebook"> </a></li>
-                    <li><a href="#" class="in"> </a></li>
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
 <!-- //footer -->
 <!-- for bootstrap working -->
     <script src="js/bootstrap.js"></script>
-    <script async defer
- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrVGPcZ_q84vz9st49mDVrfF6IgOJ1LKA&callback=initMap">
-</script>
 <!-- //for bootstrap working -->
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 </body>
 </html>
