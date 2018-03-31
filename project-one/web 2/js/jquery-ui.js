@@ -2,93 +2,78 @@
   var config = {
     apiKey: "AIzaSyDOuSESzpoEB5uBaQoTj999OkbYTdV36Tc",
     authDomain: "restaurant-menu-889c1.firebaseapp.com",
-    databaseURL: "https://restxaurant-menu-889c1.firebaseio.com",
+    databaseURL: "https://restaurant-menu-889c1.firebaseio.com",
     projectId: "restaurant-menu-889c1",
-    storageBucket: "",
+    storageBucket: "restaurant-menu-889c1.appspot.com",
     messagingSenderId: "351346849745"
   };
   firebase.initializeApp(config);
-x
-  var database = firebase.database()
 
-/*! jQuery UI - v1.9.2 - 2012-11-23
-* http://jqueryui.com
-* Includes: jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.draggable.js, jquery.ui.droppable.js, jquery.ui.resizable.js, jquery.ui.selectable.js, jquery.ui.sortable.js, jquery.ui.effect.js, jquery.ui.accordion.js, jquery.ui.autocomplete.js, jquery.ui.button.js, jquery.ui.datepicker.js, jquery.ui.dialog.js, jquery.ui.effect-blind.js, jquery.ui.effect-bounce.js, jquery.ui.effect-clip.js, jquery.ui.effect-drop.js, jquery.ui.effect-explode.js, jquery.ui.effect-fade.js, jquery.ui.effect-fold.js, jquery.ui.effect-highlight.js, jquery.ui.effect-pulsate.js, jquery.ui.effect-scale.js, jquery.ui.effect-shake.js, jquery.ui.effect-slide.js, jquery.ui.effect-transfer.js, jquery.ui.menu.js, jquery.ui.position.js, jquery.ui.progressbar.js, jquery.ui.slider.js, jquery.ui.spinner.js, jquery.ui.tabs.js, jquery.ui.tooltip.js
-* Copyright 2012 jQuery Foundation and other contributors; Licensed MIT */
+  var database = firebase.database();
 
-// code assault js - res form
-$("#addResBtn").on("click", function(event) {
-	event.preventDefault();
-	
-  
-    var partyName= $("#InputPartyName").val().trim();
+  /*! jQuery UI - v1.9.2 - 2012-11-23
+   * http://jqueryui.com
+   * Includes: jquery.ui.core.js, jquery.ui.widget.js, jquery.ui.mouse.js, jquery.ui.draggable.js, jquery.ui.droppable.js, jquery.ui.resizable.js, jquery.ui.selectable.js, jquery.ui.sortable.js, jquery.ui.effect.js, jquery.ui.accordion.js, jquery.ui.autocomplete.js, jquery.ui.button.js, jquery.ui.datepicker.js, jquery.ui.dialog.js, jquery.ui.effect-blind.js, jquery.ui.effect-bounce.js, jquery.ui.effect-clip.js, jquery.ui.effect-drop.js, jquery.ui.effect-explode.js, jquery.ui.effect-fade.js, jquery.ui.effect-fold.js, jquery.ui.effect-highlight.js, jquery.ui.effect-pulsate.js, jquery.ui.effect-scale.js, jquery.ui.effect-shake.js, jquery.ui.effect-slide.js, jquery.ui.effect-transfer.js, jquery.ui.menu.js, jquery.ui.position.js, jquery.ui.progressbar.js, jquery.ui.slider.js, jquery.ui.spinner.js, jquery.ui.tabs.js, jquery.ui.tooltip.js
+   * Copyright 2012 jQuery Foundation and other contributors; Licensed MIT */
+ 
+   // code assault js - res form
+  $("#addResBtn").on("click", function (event) {
+    event.preventDefault();
+    var partyName = $("#InputPartyName").val().trim();
     var partySize = $("#InputPartySize").val().trim();
-	var resTime = $("#InputResTime").val().trim();
-	var partyId = $("#InputPartyId").val().trim();
-    
-    
-   var newRes = {
-    name: partyName,
-    size: partySize,
-	time: resTime,
-	id: partyId,
-    
- 
-   }
-  
-  console.log(newRes);
-   database.ref().push(newRes);
- 
+    var resTime = $("#InputResTime").val().trim();
+    var partyId = $("#InputPartyId").key;
+    var newRes = {
+        name: partyName,
+        size: partySize,
+        time: resTime,
+    };
+    console.log(newRes);
+	database.ref().push(newRes);
+	
     $("#InputPartyName").val("");
     $("#InputPartySize").val("");
-	$("#InputResTime").val("");
-	$("#InputPartyId").val("X")
- 
-    return false;
- 
+    $("#InputResTime").val("");
+	$("#InputPartyId").val("X");
+	
+	return false;
+	
+  });
+
+  database.ref().on("child_added", function (childSnapshot) {
+   
+	var partyName = childSnapshot.val().name;
+    var partySize = childSnapshot.val().size;
+    var resTime = childSnapshot.val().time;
+	var partyId = childSnapshot.key;
+	
+    $("#new-res").append("<tr><td>" + partyName + "</td><td>" + partySize + "</td><td>" + resTime + "</td><td><button data-id='" + partyId + "' class='cancel'>cancel</button></td></tr>");
+  
 });
 
-   database.ref().on("child_added", function(childSnapshot) {
- 
-    console.log(childSnapshot.val().name);
-    console.log(childSnapshot.val().size);
-    console.log(childSnapshot.val().time);
- 
-  
-    var partyName = childSnapshot.val().name;
-    var partySize = childSnapshot.val().size;
-	var resTime = childSnapshot.val().time;
-	var partyId = childSnapshot.key();
- 
-    $("#new-res").append("<tr><td>" + partyName + "</td><td>" + partySize + "</td><td>"+ resTime + "</td><button data-id='"+ partyId +"' class='cancel'>cancel</button></tr>");
- 
-  });
-
-  $(document).click(".cancel", function(e) {
-	e.preventDefault();
-	console.log($(this).attr(data-id));
-  console.log('clicked');
-	swal(
-	  {
-	  title: "Are you sure?",
-	  text: "Once deleted, you will not be able to make this reservation time again!",
-	  icon: "warning",
-	  buttons: true,
-	  dangerMode: true,
-	}
-  )
-	.then((willDelete) => {
-	  if (willDelete) {
-		swal("Your reservation has been cancelled!", {
-		  icon: "success",
+  $(document).on("click", ".cancel", function (e) {
+    e.preventDefault();
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+		})
+		
+        .then((willDelete) => {
+            database.ref().child($(this).attr('data-id')).remove();
+            if (willDelete) {
+                swal("Poof! Your imaginary file has been deleted!", {
+                    icon: "success",
+                });
+            } else {
+                swal("Your imaginary file is safe!");
+			}
 		});
-	  } else {
-		swal("Your reservation is still active.");
-	  }
-	});
-  
+			// location.reload()
   });
-//   code assault js-form
+  //   code assault js-form
 
 
 (function( $, undefined ) {
