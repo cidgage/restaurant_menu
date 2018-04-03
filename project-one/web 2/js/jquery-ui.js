@@ -75,6 +75,45 @@
   });
   //   code assault js-form
 
+  //	code assault- Gif AJAX: start
+
+  $("foodButtons").on("click", function() {
+	console.log("hello");
+	var pizza = $(this).attr("data-food");
+
+	$("#gifs-appear-here").empty();
+
+	var queryURL= "https://api.giphy.com/v1/gifs/search?q=" +
+	pizza + "&api_key=NIpD8bfjIjRppW0S7rgQGzUZOK1xjjpy&limit=3";
+
+
+	$.ajax({
+	url: queryURL,
+	method: "GET"
+	})
+
+		.then(function(response) {
+		var results= response.data;
+		for (var i = 0; i <results.length; i++) {
+		var pizzaDiv = $("<div>");
+		var pizzaImage = $("<img>");
+		pizzaImage.attr("src", results[i].images.fixed_height.url);
+
+
+
+		pizzaDiv.append(pizzaImage);
+
+
+		$("#gifs-appear-here").prepend(pizzaDiv);
+
+		}
+
+	});
+
+});
+
+  //	code assault- Gif AJAX: end
+
 
 (function( $, undefined ) {
 
